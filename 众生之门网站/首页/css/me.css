@@ -1,0 +1,188 @@
+/* 导航栏 start */
+ul{
+    list-style-type: none; /*清除无序列表前的小点*/
+    width: auto;
+    height: 72px;
+    background: #2f2d35;
+    margin: 0px;
+    padding-left: 18%;/*左边距，使li看起来在中间*/
+    /*position: relative;*/
+    text-align: center;
+    font-size: 20px
+}
+li{
+    float: left;
+    width: 100px;
+    height: 100%;
+    padding: 0px;
+    margin-right: 0%;  /*两个li之间的距离*/
+}
+a:link,a:visited{ /*鼠标未点击和点击过时的样式*/
+    display: block;
+    color: #FFFFFF;
+    background-color: #2f2d35;
+    text-align: center;
+    line-height: 72px; /*li行高*/
+    padding: 5px;
+    text-decoration: none; /*去下划线*/
+}
+a:hover{ /*鼠标移动到点击位时的样式，active指点击过后的样式*/
+    background-color: #1a1822;
+}
+.black-nav .logo img{
+    height: 72px;
+    position: absolute;
+    left: 0%;
+}
+/* 导航栏 end */
+/* banner start */
+.banner img{
+    width: auto;
+    height: 673px;
+    position: relative;
+    left: 50%;
+    transform:translatex(-50%);
+}
+/* banner end */
+/* banner2 start */
+.banner2{
+    background-image: url("image/首页/images/新闻1.png");
+    width: 100%;
+    height:600px;
+    position: relative; 
+    border-radius: 5px 5px 0px 0px;
+}
+.banner2 img{
+    height: 740px;
+    position: relative;
+    left: 50%;
+    transform:translatex(-50%);
+}
+.emoji{
+    width: 160px;position: absolute;  
+    height:160px;bottom: 100px ;left: 100px;z-index:1;top:605px;
+}
+.emoji img{
+    width:160px;position: absolute;  
+    height:160px;bottom: 100px ;left: 100px;
+}
+.slider{
+    width: 42.5%;overflow: hidden; position: absolute; left:200px;
+    bottom: -2px; aspect-ratio: 3/2.225;
+}
+.slides{
+    width: 300%;animation: ma 10s ease-out infinite alternate; margin: -2px;
+    animation-delay: 4s; 
+}
+
+.slide1{
+    display: inline-block; width: 13%;margin: -3px;   
+}
+.slide2{
+    display: inline-block; width: 13%;margin: -3px;
+    
+}
+.slide3{
+    display: inline-block; width: 13%;margin: -3px;
+}
+.slide4{
+    display: inline-block; width: 13%;margin: -3px;
+}
+.slider img{
+    width: 100%;box-sizing: border-box; object-fit: cover;
+    height: 100%;
+}
+@keyframes ma {
+    0%,25%{
+        transform: translateX(0);
+    }
+    25%,50%{
+        transform: translateX(-10.5%);
+    }
+    50%,75%{
+        transform: translateX(-20%);
+    }
+    75%,100%{
+        transform: translateX(-30%);
+    }
+}
+
+
+.news{
+ width: 557px; background: rgba(0, 0, 0, 0.8); box-sizing: border-box; aspect-ratio: 3/2.5;
+ position: absolute; right: 90px; bottom: -2px; 
+}
+.news .news1 .nav1{
+ width: 15%; height: 11%; position: absolute; left: 7%; 
+ } 
+.news .news1 .nav2{
+ width: 15%; height: 11%; position: absolute; left: 32%;
+}
+.news .news1 .nav3{
+ width: 15%; height: 11%; position: absolute; left: 57%;
+ }
+    
+.news .news1{
+width: 100%; height:19%; box-sizing: border-box;padding-top: 12px;float: left;border-bottom:1px solid white ;
+}
+.news .news2{
+ width: 100%; height:19%; box-sizing: border-box;padding-top: 12px;float: left;
+}
+.news1 .date{
+font-size: 20px; color: aliceblue;float: right; margin-right: 12px;padding-top: 20px;
+}
+.news2 .date{font-size: 20px; color: aliceblue;float: right; margin-right: 12px;padding-top: 20px;
+    }
+.news a{
+font-size: 20px; margin: 0px;float: left;
+ color: aliceblue; width: 60%; height:0%; background-color: rgba(255, 255, 255, 0);
+}
+    
+.news .news1 :hover{
+font-size: 20px; margin-top: 0px; color: rgb(245, 137, 42);
+}
+.news .news2 :hover{
+font-size: 20px; margin-top: 0px; color: rgb(245, 137, 42);
+}
+/* banner2 end */
+/* banner3 start */
+.banner3 img{
+    top: 140px;
+    height: 750px;
+    position: relative;
+    left: 50%;
+    transform:translatex(-50%);
+}
+/* banner3 end */
+/* map start */
+.c1 img{
+     top: 80px;
+     width: 100%;
+     position: relative;
+     left: 50%;
+    transform:translatex(-50%);
+    }
+.c2 img{
+        top: 80px;
+        width: 100%;
+        position: relative;
+        left: 50%;
+       transform:translatex(-50%);
+    }
+.c3 img{
+        top: 80px;
+        width: 100%;
+        position: relative;
+        left: 50%;
+       transform:translatex(-50%);
+    }
+.c4 img{
+        top: 80px;
+        width: 100%;
+        position: relative;
+        left: 50%;
+       transform:translatex(-50%);
+    }
+.map5{ top: 80px;
+ width: 100%; height: 300px;background: #101216;}
+/* map end */

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+</head>
+<body>
+    <div class="black-nav">
+        <div class="logo">
+            <img src="image/首页/images/logo.png" alt="logo">
+        </div>
+        <div class="wrap">
+            <ul class="black-wrap-left">
+                <li><a href="赛事.html" >赛事活动</a></li>
+                <li><a href="斗帅宫.html" >斗帅宫</a></li>
+                <li><a href="拾贰集.html" >拾贰集</a></li>
+            </ul>
+        </div>
+    </div>
+    <style>
+    .wrap ul{
+        list-style-type: none; /*清除无序列表前的小点*/
+        width: auto;
+        height: 72px;
+        background: #2f2d35;
+        margin: 0px;
+        padding-left: 18%;/*左边距，使li看起来在中间*/
+        /*position: relative;*/
+        text-align: center;
+        font-size: 20px
+    }
+    .wrap li{
+        float: left;
+        width: 100px;
+        height: 100%;
+        padding: 0px;
+        margin-right: 0%;  /*两个li之间的距离*/
+    }
+    a:link,a:visited{ /*鼠标未点击和点击过时的样式*/
+        display: block;
+        color: #FFFFFF;
+        background-color: #2f2d35;
+        text-align: center;
+        line-height: 72px; /*li行高*/
+        padding: 5px;
+        text-decoration: none; /*去下划线*/
+    }
+    a:hover{ /*鼠标移动到点击位时的样式，active指点击过后的样式*/
+        background-color: #1a1822;
+    }
+    .black-nav .logo img{
+        height: 72px;
+        position: absolute;
+        left: 0%;
+    }
+    </style>
+        <div class="sai">
+            <div class="n1">
+            <img src="image/首页/images/拾贰集部分.gif" alt="赛事"></div>
+            </div>
+        </div>
+        <style>
+            .sai img{
+             width: 100%;
+             position:absolute;}
+            .sai { width: 100%;background-image: url("image/首页/images/赛事下面部分.gif.png");}
+        </style>
+    
+</body>
+</html>

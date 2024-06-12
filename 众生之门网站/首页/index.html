@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>众生之门</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/me.css">
+</head>
+<body>
+    <!--黑色导航 start-->
+    <div class="black-nav">
+        <div class="logo">
+            <img src="image/首页/images/logo.png" alt="logo">
+        </div>
+        <div class="wrap">
+            <ul class="black-wrap-left">
+                <li><a href="#" >首页</a></li>
+                <li><a href="#" >地图</a></li>
+                <li><a href="人物介绍.html" target="_blank">人物档案</a></li>
+                <li><a href="赛事.html" target="_blank">赛事</a></li>
+                <li><a href="论坛.html" >论坛</a></li> 
+                <li><a href="加入会馆.html" >加入会馆</a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" onclick="Show();">登录</a></li>
+                <li><a href="#" >注册</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal" class="g2 hide">
+        <p>用户：<input type="text" /></p>
+        <p>密码：<input type="password" /></p>
+    <p>
+        <input type="button" value="确定" onclick="Hide();">
+        <input type="button" value="取消" onclick="Hide();">
+    </p>
+        </div>   
+    <script>
+        function Show(){
+            document.getElementById('modal').classList.remove('hide');
+        }
+         function Hide(){
+            document.getElementById('modal').classList.add('hide');
+        }
+    </script>
+        <style>
+            .hide{
+                display: none;
+            }
+            .g2{
+                background-color: rgb(255, 255, 255);
+                font-size: larger;
+                position: fixed;
+                width: 400px;
+                height: 300px;
+                top:50%;
+                left: 50%;
+                z-index: 3;
+                margin-top: -150px;
+                margin-left: -200px;
+            }
+            #modal p {
+                margin-left:80px;position: relative;top: 80px;font-size: large;
+            }
+        </style>
+    </div>
+    <!--黑色导航 end-->
+    <!--图片 start-->
+    <div class="banner">
+        <img src="image/首页/images/众生之门_02.gif" alt="logo">
+    </div>
+    <!--图片 end-->
+    <!--资讯 start-->
+<div class="banner2">
+    <div class="n1">
+        <img src="image/首页/images/新闻1.gif"alt="新闻1">
+    </div>
+    <div class="emoji">
+        <img src="image/首页/images/QQ图片20240606233454.gif">
+    </div>
+    <div class="slider">
+        <div class="slides">
+            <div class="slides">
+                <div class="slide1"><img src="image/首页/images/资讯_01.gif.png"></div>
+                <div class="slide2"><img src="image/首页/images/资讯_02.gif-1.png"></div>
+                <div class="slide3"><img src="image/首页/images/资讯_02.gif.png"></div>
+                <div class="slide4"><img src="image/首页/images/资讯_04.gif.png"></div>
+            </div>
+        </div>
+    </div>
+    <div class="news">
+         <div class="news1">
+         <div class="nav1"><a class="a" href="">最新</a></div>
+         <div class="nav2"><a class="a" href="">最新</a></div>
+         <div class="nav3"><a class="a" href="">最新</a></div>
+         </div>
+         <div class="news1"><a href="">《饥荒》steam在线峰值破18万</a><div class="date">2024/5/01</div></div>
+         <div class="news1"><a href="">《饥荒》steam在线峰值破18万</a><div class="date">2024/5/01</div></div>
+         <div class="news1"><a href="">《饥荒》steam在线峰值破18万</a><div class="date">2024/5/01</div></div>
+         <div class="news2"><a href="">《饥荒》steam在线峰值破18万</a><div class="date">2024/5/01</div></div>
+         </div>
+     <div class="there">
+         <a href="月报.html" target="_blank">官微月报</a>
+    </div>
+</div>
+<style>
+    .there a{background-color: rgba(255, 255, 255, 0);}
+    .there {font-size:28px; color: rgb(255, 255, 255);letter-spacing: 0.2em;}
+    .there{
+        background-color: rgba(255, 255, 255, 0);
+        width: 20%;bottom: -80px;position:absolute;
+        margin-left: 200px;cursor: pointer;z-index: 3;
+        height: 90px;}
+    .there :hover{
+        font-size: 29px; background-color: rgba(255, 255, 255, 0)}
+    </style>
+<!--资讯 end-->
+<!--地图 start-->
+<div class="banner3">
+  <img id="img1" src="image/首页/images/images/浏览效果2_02.gif.png" />
+ <script>
+    //window.onload 发生要对对象进行，而对象还未被加载，导致相当于无操作的实例
+    window.onload = function() {
+        var img1 = document.getElementById('img1');
+        var b = 1;
+        img1.onclick = function() {
+            if (b) {
+                img1.src="image/首页/images/images/浏览效果2_02.gif.png";
+                b--;
+            } else {
+                img1.src ="image/首页/images/images/浏览效果_02.gif.png";
+                b = 1;
+            }
+        }
+    };
+ </script>
+ <!--搜索栏 start-->
+ <div class="search_member_container">
+    <!-- Search Input Container + Search Icon + Search Button -->
+        <input class="search_input" placeholder="搜索其他地点！"></div>
+      <!-- Search Submit Button Container -->
+  </div>
+  <style>
+    /* Paste your CSS styles here */
+    .search_member_container {
+      width: calc(40% - 20px);
+      height: 60px;
+      position: relative;
+      background: rgba(0, 0, 0, 0);
+      top: -525px;
+      z-index: 1;
+      float: right;
+      right: 100px;font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+ 
+    .search_input_container {
+      width: calc(100% - 100px);
+      height: 60px;
+      position: absolute;
+      left: 10px;
+      top: 0;
+    }
+ 
+    .search_input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      
+      background: rgba(0, 0, 0, 0);
+      color: aliceblue;
+      padding: 0;
+      margin: 0;
+    }
+ 
+  </style>
+ <!--搜索栏 end-->
+ <!--地图 end-->
+</div>
+   <!--地图2 start-->
+   <div class="c1">
+    <img src="image/首页/images/images/浏览效果_04.gif" name="picture"  onMouseOver="this.src='image/首页/images/images/浏览效果2_06.gif.png'" onMouseOut="this.src='image/首页/images/images/浏览效果_04.gif'">
+   </div>
+   <div class="c2">
+    <img src="image/首页/images/images/浏览效果_05.gif" name="picture"  onMouseOver="this.src='image/首页/images/images/浏览效果2_03.gif'" onMouseOut="this.src='image/首页/images/images/浏览效果_05.gif'">
+   </div>
+   <div class="c3">
+    <img src="image/首页/images/images/浏览效果_06.gif" name="picture"  onMouseOver="this.src='image/首页/images/images/浏览效果2_04.gif'" onMouseOut="this.src='image/首页/images/images/浏览效果_06.gif'">
+   </div>
+   <div class="c4">
+    <img src="image/首页/images/images/浏览效果_07.gif" name="picture"  onMouseOver="this.src='image/首页/images/images/浏览效果2_05.gif'" onMouseOut="this.src='image/首页/images/images/浏览效果_07.gif'">
+   </div>
+   <div class="map5"></div>
+    <!--地图2 end-->
+</body>
+</html>

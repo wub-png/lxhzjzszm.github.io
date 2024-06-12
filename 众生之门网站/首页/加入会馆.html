@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="./css/reset.css">
+</head>
+<body>
+    <!--黑色导航 start-->
+    <div class="black-nav">
+        <div class="logo">
+            <img src="image/首页/images/logo.png" alt="logo">
+        </div>
+        <div class="wrap">
+            <ul class="black-wrap-left">
+                <li><a href="index.html" >首页</a></li>
+                <li><a href="#" >地图</a></li>
+                <li><a href="人物介绍.html" target="_blank">人物档案</a></li>
+                <li><a href="赛事.html" target="_blank">赛事</a></li>
+                <li><a href="论坛.html" >论坛</a></li> 
+                <li><a href="加入会馆.html" >加入会馆</a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" >              </a></li>
+                <li><a href="#" onclick="Show();">登录</a></li>
+                <li><a href="#" >注册</a></li>
+            </ul>
+        </div>
+    </div>
+    <style>
+    ul{
+        list-style-type: none; /*清除无序列表前的小点*/
+        width: auto;
+        height: 72px;
+        background: #2f2d35;
+        margin: 0px;
+        padding-left: 18%;/*左边距，使li看起来在中间*/
+        /*position: relative;*/
+        text-align: center;
+        font-size: 20px
+    }
+    li{
+        float: left;
+        width: 100px;
+        height: 100%;
+        padding: 0px;
+        margin-right: 0%;  /*两个li之间的距离*/
+    }
+    a:link,a:visited{ /*鼠标未点击和点击过时的样式*/
+        display: block;
+        color: #FFFFFF;
+        background-color: #2f2d35;
+        text-align: center;
+        line-height: 72px; /*li行高*/
+        padding: 5px;
+        text-decoration: none; /*去下划线*/
+    }
+    a:hover{ /*鼠标移动到点击位时的样式，active指点击过后的样式*/
+        background-color: #1a1822;
+    }
+    .black-nav .logo img{
+        height: 72px;
+        position: absolute;
+        left: 0%;
+    }
+    </style>
+    <!--黑色导航 end-->
+    <div class="guan">
+        <img src="image/首页/论坛/论坛背景.gif" alt="logo">
+        <div class="there">
+            <a onclick="Show();">申请入会</a>
+        </div>
+        <div id="modal" class="bg hide">
+            <form action="#" method="get" autocomplete="off">
+             <p><span>种族：</span>
+              <!-- 在下面的横线中填写`禁用属性`和`只读属性` -->
+              <input type="text" name="user_name" value="myemail@163.com" disabled readonly/>
+             </p>
+             
+             <p><span>姓名：</span>
+             <!-- 在下面的横线中填写`必填属性`和`自动聚焦` -->
+              <input type="text" name="real_name" placeholder="例如：思聪" required autofocus/>
+             </p>
+             
+             <p><span>年龄：</span>
+              <!-- 在下面的横线中填写`最大值属性`和`最小值属性` -->
+              <input type="number" name="real_lage">
+             </p>
+             
+             <p><span>申请日期：</span>
+              <!-- 在下面的横线中填写`type的日期类型` -->
+              <input type="date" name="birthday" value="1999-10-1" required/></p>
+             </p>
+             
+             <p><span>所在地区：</span>
+              <!--  在下面的横线中填写input标签的`引用数据列表属性`-->
+              <input type="text" name="real_name" placeholder="xx省xx市" required autofocus/>
+
+             </p>
+             
+             <p class="btn">
+                <input type="button" value="提交" onclick="Hide();">
+                <input type="button" value="取消" onclick="Hide();">
+             </p>
+            </form>
+           </div>
+    </div>
+    <script>
+        function Show(){
+            document.getElementById('modal').classList.remove('hide');
+        }
+         function Hide(){
+            document.getElementById('modal').classList.add('hide');
+        }
+    </script>
+    <style>
+    .guan{
+        background-image: url("image/首页/论坛/论坛背景.gif");
+        height: 665px; background-repeat: no-repeat; 
+        background-size: 100%;
+        display: flex;
+        align-items: flex-end;
+        position: relative;}
+    .guan img{
+        width: 100%;
+        height: 665px;}
+    .there {font-size:28px; color: white;font-weight: bold;letter-spacing: 0.2em;}
+    .there{
+        background-color: rgba(255, 255, 255, 0);
+        width: 20%;margin-bottom: 165px;position:absolute;
+        margin-left: 550px;cursor: pointer;
+        height: 90px;}
+    .there :hover{
+        font-size: 29px; background-color: rgba(255, 255, 255, 0)}
+    </style>
+    <!--加入会馆 end-->
+    <style type="text/css">
+        .hide{
+            display: none;}
+        input {
+         width:200px;
+         height:18px;                                 
+         border:1px solid #d4cdba;
+         padding:2px; 
+        }
+        .btn input{
+         width:100px; 
+         height:30px;
+         border-radius:3px;
+        }
+        .bg{
+        background-color: rgb(255, 255, 255);
+        font-size: larger;
+        position: fixed;
+        width: 500px;
+        height: 400px;
+        top:50%;
+        left: 50%;
+        z-index: 3;
+        margin-top: -150px;
+        margin-left: -200px;
+        }
+        #modal p {
+        margin-left:90px;position: relative;top: 60px;font-size: large;
+        }
+       </style>
+       
+</body>
+</html>

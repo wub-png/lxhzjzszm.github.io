@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <style>
+        .content{
+            width: 100%;
+            height: 750px;
+            background-image: url("image/首页/人物介绍/无限.png");
+            background-repeat: no-repeat; 
+            background-size: 100%;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+
+        }
+        .one,.two,.there{
+            margin-bottom: 32px;
+            width: 8%;
+            margin-left: 80px;
+            text-align: center;
+            font-size:25px;
+            height: 90px;
+        }
+        .one :hover{
+         color: rgb(255, 255, 255);font-size: 26px; border-bottom:5px solid rgb(217, 102, 36);padding-bottom: 10px;cursor: pointer}
+        .two :hover{
+         color: rgb(255, 255, 255);font-size: 26px; border-bottom:6px solid rgb(217, 102, 36) ;padding-bottom: 10px;cursor: pointer}
+        .there :hover{
+         color: rgb(255, 255, 255);font-size: 26px; border-bottom:5px solid rgb(217, 102, 36) ;padding-bottom: 10px;cursor: pointer}
+        .one.two.there{
+            font-size:80px; color: aliceblue; 
+        }
+        .one1{
+            background-image: url("image/首页/人物介绍/无限.png");
+        }
+        .two1{
+            background-image: url("image/首页/人物介绍/小黑.png");
+    
+        }
+        .there1{
+            background-image: url("image/首页/人物介绍/风息.png");
+          }
+        .down{
+            margin-top:25px ;
+        }
+    </style>
+    <script>
+        function a() {
+            var a=document.getElementById('content').style.backgroundImage='url("image/首页/人物介绍/风息.png")';
+    
+        }
+        function b() {
+            var a=document.getElementById('content').style.backgroundImage='url("image/首页/人物介绍/无限.png")';
+    
+        }
+        function c() {
+            var a=document.getElementById('content').style.backgroundImage='url("image/首页/人物介绍/小黑.png")';
+    
+        }
+    </script>
+    <div class="content" id="content">
+        <div class="one" onclick="a()">
+            <div class="one1"></div>
+            <div class="down" >风    息</div>
+        </div>
+        <div class="two"  onclick="b()">
+            <div class="two1"></div>
+            <div class="down">无    限</div>
+        </div>
+        <div class="there" onclick="c()">
+            <div class="there1"></div>
+            <div class="down">小    黑</div>
+        </div>
+        <div class="there" onclick="c()">
+            <div class="down">哪    吒</div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="contact-me">
+        <h2>Get In Touch</h2>
+            <ul>
+                <li>
+                     <img src="image/首页/images/资讯_02.gif.png" alt="linkedin-img">
+                </li>
+                <li>
+                 <img src="image/首页/images/资讯_04.gif.png" alt="email-img">
+                </li>
+                <li>
+                 <img src="image/首页/images/资讯_04.gif.png" alt="github-img">
+                </li>
+            </ul>
+    </div>
+    <div class="contact-me2">
+        <ul>
+            <li>
+             <img src="image/首页/images/资讯_02.gif-1.png" alt="github-img">
+            </li></ul>
+    </div>
+    <style>
+    .contact-me{
+        text-align: center; background-color: rgba(255, 255, 255, 0);
+    }
+    .contact-me img{height: 250px;}
+    ul li{
+        display: inline;   
+        margin-right: 50px;  
+        margin-bottom: 0%;margin-top: 0%;
+    }
+    a{
+        text-decoration: none;}
+    ul li img:hover{
+        transform: scale(1.01);  
+    }
+    .contact-me2{
+        text-align: center; background-color: rgba(255, 252, 240, 0);float: left;margin-left: 120px;
+    }
+    .contact-me2 img{height: 450px;}
+    </style>
+    
+</body>
+</html>

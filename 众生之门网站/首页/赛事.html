@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+</head>
+<body>
+    <div class="black-nav">
+        <div class="logo">
+            <img src="image/首页/images/logo.png" alt="logo">
+        </div>
+        <div class="wrap">
+            <ul class="black-wrap-left">
+                <li><a href="赛事.html" >赛事活动</a></li>
+                <li><a href="斗帅宫.html" >斗帅宫</a></li>
+                <li><a href="拾贰集.html" >拾贰集</a></li>
+            </ul>
+        </div>
+    </div>
+    <style>
+    .wrap ul{
+        list-style-type: none; /*清除无序列表前的小点*/
+        width: auto;
+        height: 72px;
+        background: #2f2d35;
+        margin: 0px;
+        padding-left: 18%;/*左边距，使li看起来在中间*/
+        /*position: relative;*/
+        text-align: center;
+        font-size: 20px
+    }
+    .wrap li{
+        float: left;
+        width: 100px;
+        height: 100%;
+        padding: 0px;
+        margin-right: 0%;  /*两个li之间的距离*/
+    }
+    a:link,a:visited{ /*鼠标未点击和点击过时的样式*/
+        display: block;
+        color: #FFFFFF;
+        background-color: #2f2d35;
+        text-align: center;
+        line-height: 72px; /*li行高*/
+        padding: 5px;
+        text-decoration: none; /*去下划线*/
+    }
+    a:hover{ /*鼠标移动到点击位时的样式，active指点击过后的样式*/
+        background-color: #1a1822;
+    }
+    .black-nav .logo img{
+        height: 72px;
+        position: absolute;
+        left: 0%;
+    }
+    </style>
+    <!--黑色导航 end-->
+    <div class="box">
+        <!-- 左箭头 -->
+        <a href="javascript:;" class="prev"> &lt;</a>
+        <!-- 右箭头 -->
+        <a href="javascript:;" class="next"> &gt;</a>
+        <ul class="images">
+            <li><a ><img src="image/首页/images/赛事3.gif" alt="轮播图图片"></a></li>
+            <li><a ><img src="image/首页/images/赛事2.gif" alt="轮播图图片"></a></li>
+            <li><a ><img src="image/首页/images/赛事1.gif" alt="轮播图图片"></a></li>
+        </ul>
+        <ul class="dots">
+            <!-- li 用js动态生成-->
+        </ul>
+    </div>
+    <style >
+        /* 默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+     
+            a {
+                text-decoration: none;
+            }
+            li {
+                list-style: none;
+            }
+        }
+     
+        /* 轮播图盒子 */
+        .box {
+            width: 100%;
+            height: 410px;
+            position: relative;
+            overflow: hidden;
+     
+            /* 上、下一页 */
+            .prev,
+            .next {
+                opacity: 0;
+                display: inline-block;
+                cursor: pointer;
+                width: 50px;
+                height: 90px;
+                position: absolute;
+                top: 50%;
+                color: #d2d0d0;
+                z-index: 33;
+                text-align: center;
+                font-size: 40px;
+                transform: translateY(-25px);
+            }
+     
+            /* 上一页不同的属性 */
+            .prev {
+                left: 0;background: rgba(255, 255, 255, 0);
+                border-radius: 0 25% 25% 0;
+            }
+     
+            /* 下一页不同的属性 */
+            .next {
+                right: 0;
+                border-radius: 25% 0 0 25%;background: rgba(255, 255, 255, 0);
+            }
+     
+            /* 图片容器 */
+            .images {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 900%;
+     
+                /* 图片 */
+                li {
+                    list-style: none;
+                    float: left;
+                    img {
+                        width: 100%;
+                        height: 408px;
+                    }
+                }
+            }
+     
+            /* 小圆点盒子 */
+            .dots {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                height: 13px;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0);
+                border-radius: 7px;
+                display: flex;
+     
+                /* 小圆点 */
+                li {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border-color: white;
+                    background-color: rgb(0, 0, 0, 0.2);
+                    margin: 2px 5px;
+                    cursor: pointer;
+                }
+     
+                /* 选择的小圆点 */
+                .active {
+                    background-color: rgb(247, 243, 243);
+                }
+            }
+        }
+     
+        /* 鼠标移入盒子显示上、下按钮 */
+        .box:hover .prev,
+        .box:hover .next {
+            opacity: 1;
+        }
+     
+        /* 鼠标移入上、下按钮，背景模糊 */
+        .box .prev:hover,
+        .box .next:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+        <script>
+            /* 功能需求
+            （1）当鼠标经过轮播图，左右两边的按钮出现，离开则隐藏按钮；(CSS完成）
+            （2）点击左侧按钮，图片向右播放一张，右侧同理；
+            （3）图片播放的同时，下面的小圆圈也会随之变化；
+            （4）点击小圆圈，可以播放相应的图片；
+            （5）鼠标移入小圆圈，可以播放相应的图片（看需求是要点击还是移入，把click改成mouseenter）
+            （6）鼠标移出轮播图会自动播放图片
+            （7）鼠标移入轮播图会暂停播放图片
+            */
+            window.addEventListener('load', function () {
+                // 图片的下标
+                var slideIndex = 0;
+                //circle 控制小圆圈的播放
+                var circle = 0;
+                //获取小圆圈盒子
+                var dots = document.querySelector('.dots');
+                //获取所有图片
+                var images = document.querySelector('.images');
+                //获取轮播图容器
+                var box = document.querySelector('.box')
+                //获取轮播图容器宽度
+                var box_width = box.offsetWidth;
+         
+                //1.获取上、下一页并添加点击事件
+                var prev = document.querySelector(".prev")
+                var next = document.querySelector(".next")
+                //上一页
+                prev.addEventListener("click", function () {
+                    if (slideIndex == 0) {//已经第一页了，再上一页就该是最后一页
+                        slideIndex = images.children.length - 1
+                        images.style.left = -slideIndex * box_width + 'px';
+                    }
+                    slideIndex--;
+                    animate(images, -slideIndex * box_width)
+                    // 小圆圈跟随一起变化
+                    circle--;
+                    circle = circle < 0 ? dots.children.length - 1 : circle;
+                    //调用函数
+                    circleChange();
+                });
+                //下一页
+                next.addEventListener("click", function () {
+                    if (slideIndex == images.children.length - 1) {//已经最后一页了，再下一页就该是第一页
+                        images.style.left = 0;
+                        slideIndex = 0;
+                    }
+                    slideIndex++;
+                    animate(images, -slideIndex * box_width);
+                    // 小圆圈跟随一起变化
+                    circle++;
+                    if (circle == dots.children.length) {
+                        circle = 0;
+                    }
+                    circleChange();
+                });
+         
+                // 2.动态生成小圆圈 有几张图片，就生成几个小圆圈
+                var dots = document.querySelector('.dots');
+                for (var i = 0; i < images.children.length; i++) {
+                    //创建一个小li
+                    var li = document.createElement('li');
+                    //记录当前小圆圈的索引号 通过创建自定义属性来做
+                    li.setAttribute('index', i);
+                    dots.appendChild(li);
+                    //小圆圈的排他思想 在生成小圆圈的同时绑定点击事件
+                    li.addEventListener('click', function () {
+                        for (var i = 0; i < dots.children.length; i++) {
+                            dots.children[i].className = ' '; //清空样式
+                        }
+                        this.className = 'active';
+                        //点击小圆圈，移动图片，本质移动的是ul
+                        //ul 的移动距离 就是小圆圈的索引号 * 图片的宽度 注意是负值
+                        // 当我们点击了某个小li 就拿到它的index属性
+                        var index = this.getAttribute('index');
+                        //当我们点击了某个小li 就要把这个小li 的index给slideIndex
+                        slideIndex = index;
+                        circle = index;
+                        animate(images, -slideIndex * box_width);
+                    })
+                }
+                //把dots 里面的第一个小li设置类名为 active
+                dots.children[0].className = 'active';
+                // 实现滑动到最后一张照片时 可以平滑地过渡到第一张，克隆第一张图片 放在ul最后面，在其后克隆小圆点不会多
+                var first = images.children[0].cloneNode(true);
+                images.appendChild(first);
+         
+                //3.点击小圆圈添加激活样式
+                function circleChange() {
+                    for (var i = 0; i < dots.children.length; i++) {
+                        dots.children[i].className = '';
+                    }
+                    dots.children[circle].className = 'active';
+                }
+         
+                //定时器自动播放3S
+                var timer = setInterval(function () {
+                    next.click();
+                }, 3000);
+         
+                //3.绑定鼠标移入移出事件
+                //鼠标移入，停止播放,清除计时器
+                box.addEventListener('mouseenter', function () {
+                    clearInterval(timer);
+                    timer = null;//清除计时器
+                });
+                //鼠标离开，轮播图自动切换 相当于点击右箭头
+                box.addEventListener('mouseleave', function () {
+                    timer = setInterval(function () {
+                        // 手动调用事件
+                        next.click();
+                    }, 3000);
+                });
+         
+                //轮播图播放动画
+                function animate(obj, target, callback) {
+                    //让元素只有一个定时器在执行，需要清除以前的定时器
+                    clearInterval(obj.timer);
+                    obj.timer = setInterval(function () {
+                        var step = (target - obj.offsetLeft) / 10;
+                        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                        if (obj.offsetLeft == target) {
+                            //停止动画 本质是停止定时器
+                            clearInterval(obj.timer)
+                            //回调函数写到定时器结束位置
+                            if (callback) {
+                                callback();
+                            }
+                        }
+                        //把每次加1这个步长值改为一个慢慢变小的值
+                        obj.style.left = obj.offsetLeft + step + 'px';
+                    }, 15);
+                }
+         
+                next.click();
+            })
+        </script>
+    <div class="sai">
+        <div class="n1">
+        <img src="image/首页/images/赛事下面部分.gif.png" alt="赛事"></div>
+        </div>
+    </div>
+    <style>
+        .sai img{
+         width: 100%;
+         position:absolute;}
+        .sai { width: 100%;background-image: url("image/首页/images/赛事下面部分.gif.png");}
+    </style>
+</body>
+</html>
